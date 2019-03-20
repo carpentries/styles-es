@@ -1,3 +1,5 @@
+{% include base_path.html %}
+
 {% comment %}
   Mostrar plan de estudios en forma de tabla.
   Los días se muestran si al menos un episodio tiene 'start = true'.
@@ -42,7 +44,7 @@
       <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</td>
       <td class="col-md-3">
         {% assign lesson_number = lesson_number | plus: 1 %}
-	{{ lesson_number }}. <a href="{{ page.root }}{{ episode.url }}">{{ episode.title }}</a>
+	{{ lesson_number }}. <a href="{{ relative_root_path }}{{ episode.url }}">{{ episode.title }}</a>
       </td>
       <td class="col-md-7">
         {% if episode.break %}
